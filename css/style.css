@@ -111,7 +111,7 @@ body {
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  margin-top: 0.5rem;
+  margin-top: -47.5rem;
 }
 
 .search-container.active {
@@ -236,8 +236,9 @@ body {
   flex: 1 1 45rem;
 }
 
-.about .row .about-img {
+.about .row .about-img img {
   width: 100%;
+  border-radius: 30%;
 }
 
 .about .row .content {
@@ -262,7 +263,7 @@ body {
   margin-bottom: 1.2rem;
 }
 .menu p,
-.coontact p {
+.contact p {
   text-align: center;
   max-width: 30rem;
   margin: auto;
@@ -280,7 +281,7 @@ body {
 /* Menu Card Zoom Effect */
 .menu .row .menu-card {
   text-align: center;
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
   overflow: hidden; /* Penting untuk efek zoom yang terkontrol */
 }
 
@@ -295,7 +296,7 @@ body {
 .menu .row .menu-card img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 10%;
   transition: transform 0.3s ease; /* Animasi zoom yang halus */
   display: block;
 }
@@ -406,7 +407,7 @@ footer .credit a {
   background-color: var(--primary);
   color: #fff;
   padding: 0 0.2rem;
-  border-radius: 0.2rem;
+  border-radius: 0.9rem;
 }
 
 .search-results-counter {
@@ -542,21 +543,37 @@ footer .credit a {
 }
 
 /* Mobile Phone */
-@media (max-width: 450px) {
-  html {
-    font-size: 55%;
-  }
 
+@media (max-width: 768px) {
   .navbar .navbar-nav {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--bg);
+    transition: 0.3s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    border-left: 1px solid #684422;
+    z-index: 9998;
   }
 
-  .hero .content h1 {
-    font-size: 3em;
+  .navbar .navbar-nav.active {
+    right: 0;
   }
 
-  /* Search Box Mobile Phone (Updated) */
-  .search-container {
-    width: 200px;
+  .navbar .navbar-nav a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
   }
+}
+
+/* Pastikan search container muncul di atas elemen lain */
+.search-container {
+  z-index: 99999;
 }
